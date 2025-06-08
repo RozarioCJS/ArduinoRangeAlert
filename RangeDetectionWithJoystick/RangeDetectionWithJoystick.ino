@@ -30,16 +30,16 @@ void setup(){
 
 void loop(){
   val = analogRead(X_pin);
-  val = map(val,0,1023,0,189);
+  val = map(val,0,1023,0,180);
   myservo.write(val);
   a = sr04.Distance();
   if(a < 10){
     digitalWrite(Buzzpin, LOW);
-    for(pos = 0; pos <=200; pos+=1){
+    for(pos = 0; pos <=180; pos+=1){
       myservo.write(pos);
       delay(1);
     }
-    for(pos = 200; pos>=0;pos -=1){
+    for(pos = 180; pos>=0;pos -=1){
       myservo.write(pos);
       delay(1);
     }
